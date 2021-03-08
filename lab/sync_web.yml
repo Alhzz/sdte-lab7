@@ -4,3 +4,9 @@
     copy:
       src: site/
       dest: /var/www/default
+  - name: "Replace"
+    replace:
+      path: /var/www/default/index.html
+      regexp: '-change-'
+      replace: '{{ ansible_port }}'
+      backup: yes
